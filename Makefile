@@ -6,7 +6,9 @@ objects :=\
 	plots/hicMapExample03.pdf\
 	plots/hicMapExample04.pdf\
 	plots/hicMapExample05.pdf\
-	plots/hicWithChromosomes.pdf
+	plots/hicWithChromosomes.pdf\
+	plots/rectangleHic.pdf\
+	plots/squareHic.png
 
 all: $(objects)
 
@@ -28,3 +30,15 @@ plots/hicWithChromosomes.pdf:\
 	scripts/marinerColorPalettes.R\
 	scripts/hicWithChromosomes.R
 		Rscript scripts/hicWithChromosomes.R
+		
+plots/rectangleHic.pdf:\
+	data/raw/hic/MEGA_K562_WT_0_inter.hic\
+	scripts/marinerColorPalettes.R\
+	scripts/rectangleHic.R
+		Rscript scripts/rectangleHic.R
+		
+plots/squareHic.png:\
+	data/raw/hic/MEGA_K562_WT_4320_inter.hic\
+	scripts/marinerColorPalettes.R\
+	scripts/squareHic.R
+		Rscript scripts/squareHic.R
