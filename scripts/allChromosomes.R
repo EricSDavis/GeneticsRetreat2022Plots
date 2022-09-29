@@ -2,6 +2,8 @@
 library(strawr)
 library(ggplot2)
 
+source("scripts/marinerColorPalettes.R")
+
 ## Extract data for all chromosomes
 dat <-
   strawr::straw(norm = "NONE",

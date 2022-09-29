@@ -8,7 +8,11 @@ objects :=\
 	plots/hicMapExample05.pdf\
 	plots/hicWithChromosomes.pdf\
 	plots/rectangleHic.pdf\
-	plots/squareHic.png
+	plots/squareHic.png\
+	plots/squareHicSplit.png\
+	plots/loopApaRegion.png\
+	plots/loopApaCond1.png\
+	plots/loopApaCond2.png
 
 all: $(objects)
 
@@ -42,3 +46,22 @@ plots/squareHic.png:\
 	scripts/marinerColorPalettes.R\
 	scripts/squareHic.R
 		Rscript scripts/squareHic.R
+		
+plots/squareHicSplit.png:\
+	data/raw/hic/MEGA_K562_WT_0_inter.hic\
+	data/raw/hic/MEGA_K562_WT_4320_inter.hic\
+	scripts/marinerColorPalettes.R\
+	scripts/squareHicSplit.R
+		Rscript scripts/squareHicSplit.R
+
+plots/loopApaRegion.png\
+plots/loopApaCond1.png\
+plots/loopApaCond2.png:\
+	data/raw/hic/MEGA_K562_WT_0_inter.hic\
+	data/raw/hic/MEGA_K562_WT_4320_inter.hic\
+	data/raw/loops/0_loops.txt\
+	data/raw/loops/360_loops.txt\
+	data/raw/loops/4320_loops.txt\
+	scripts/marinerColorPalettes.R\
+	scripts/loopApa.R
+		Rscript scripts/loopApa.R
